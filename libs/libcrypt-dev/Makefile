@@ -13,12 +13,14 @@ PKG_RELEASE:=1
 
 include $(INCLUDE_DIR)/package.mk
 
+PKG_BUILD_DEPENDS:=libxcrypt
+
 define Package/libcrypt-dev
   SECTION:=devel
   CATEGORY:=Development
   SUBMENU:=Libraries
   TITLE:=libcrypt-dev
-  DEPENDS:=@TARGET_x86_64
+  DEPENDS:=
 endef
 
 define Package/libcrypt-dev/description
@@ -33,12 +35,11 @@ define Build/Compile
 endef
 
 define Build/Install
-	mkdir -p $(PKG_INSTALL_DIR)
 endef
 
 define Package/libcrypt-dev/install
 	$(INSTALL_DIR) $(1)/lib
-	$(INSTALL_BIN) $(STAGING_DIR_ROOT)/lib/libcrypt.a $(1)/lib/
+	$(CP) $(STAGING_DIR_ROOT)/lib/libcrypt.a $(1)/lib/
 endef
 
 $(eval $(call BuildPackage,libcrypt-dev))
