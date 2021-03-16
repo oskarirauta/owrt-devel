@@ -24,7 +24,7 @@ define Package/libcrypt-dev
 endef
 
 define Package/libcrypt-dev/description
-  contains libcrypt.a
+  contains /lib/libcrypt.a
 endef
 
 define Build/Prepare
