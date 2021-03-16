@@ -22,7 +22,7 @@ define Package/libstdcpp-dev
 endef
 
 define Package/libstdcpp-dev/description
-  contains libstdc++.a, libstdc++fs.a and libsupc++.a
+  contains /lib/libstdc++.a, /lib/libstdc++fs.a and /lib/libsupc++.a
 endef
 
 define Build/Prepare
