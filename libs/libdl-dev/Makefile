@@ -22,7 +22,7 @@ define Package/libdl-dev
 endef
 
 define Package/libdl-dev/description
-  contains /lib/libdl.a
+  contains libdl.a
 endef
 
 define Build/Prepare

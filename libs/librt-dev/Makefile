@@ -22,7 +22,7 @@ define Package/librt-dev
 endef
 
 define Package/librt-dev/description
-  contains /lib/librt.a
+  contains librt.a
 endef
 
 define Build/Prepare

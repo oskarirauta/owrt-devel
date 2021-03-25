@@ -24,7 +24,7 @@ define Package/libitm-dev
 endef
 
 define Package/libitm-dev/description
-  contains /lib/libitm.a
+  contains libitm.a
 endef
 
 define Build/Prepare

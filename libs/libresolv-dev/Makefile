@@ -22,7 +22,7 @@ define Package/libresolv-dev
 endef
 
 define Package/libresolv-dev/description
-  contains /lib/libresolv.a
+  contains libresolv.a
 endef
 
 define Build/Prepare

@@ -22,7 +22,7 @@ define Package/libssp-dev
 endef
 
 define Package/libssp-dev/description
-  contains /lib/libssp(_nonshared).a
+  contains libssp(_nonshared).a
 endef
 
 define Build/Prepare

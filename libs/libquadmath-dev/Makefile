@@ -22,7 +22,7 @@ define Package/libquadmath-dev
 endef
 
 define Package/libquadmath-dev/description
-  contains /lib/libquadmath.a
+  contains libquadmath.a
 endef
 
 define Build/Prepare

@@ -22,7 +22,7 @@ define Package/libm-dev
 endef
 
 define Package/libm-dev/description
-  contains lib/libm.a
+  contains libm.a
 endef
 
 define Build/Prepare

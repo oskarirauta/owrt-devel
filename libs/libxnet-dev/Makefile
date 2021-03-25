@@ -22,7 +22,7 @@ define Package/libxnet-dev
 endef
 
 define Package/libxnet-dev/description
-  contains /lib/libxnet.a
+  contains libxnet.a
 endef
 
 define Build/Prepare

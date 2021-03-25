@@ -22,7 +22,7 @@ define Package/libgcc_s-dev
 endef
 
 define Package/libgcc_s-dev/description
-  contains lib/libgcc_s_pic.a and lib/libgcc_s_pic.map
+  contains libgcc_s_pic.a and libgcc_s_pic.map
 endef
 
 define Build/Prepare

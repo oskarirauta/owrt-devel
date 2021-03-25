@@ -22,7 +22,7 @@ define Package/libutil-dev
 endef
 
 define Package/libutil-dev/description
-  contains /lib/libutil.a
+  contains libutil.a
 endef
 
 define Build/Prepare
