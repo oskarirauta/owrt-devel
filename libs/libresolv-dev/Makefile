@@ -37,7 +37,7 @@ endef
 
 define Package/libresolv-dev/install
 	$(INSTALL_DIR) $(1)/lib
-	$(CP) $(STAGING_DIR_ROOT)/lib/libresolv.a $(1)/lib/
+	$(CP) $(STAGING_DIR_ROOT)/lib/libresolv.a $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/10.2.1/
 endef
 
 $(eval $(call BuildPackage,libresolv-dev))

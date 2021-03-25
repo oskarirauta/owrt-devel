@@ -9,7 +9,7 @@ menu "Libraries"
 			very large package
 		default n
 	config INCLUDE_STATIC_LIBPTHREAD
-		bool "Include static libptread on target"
+		bool "Include static libpthread on target"
 		help
 			Copies libpthread.a to target device
 			Increases the size of an already

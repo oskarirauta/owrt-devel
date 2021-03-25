@@ -37,7 +37,9 @@ endef
 define Package/system-headers/install
 	$(INSTALL_DIR) $(1)/usr/include
 	$(CP) -aR $(STAGING_DIR_ROOT)/usr/include/** $(1)/usr/include/
-	$(CP) -aR $(STAGING_DIR_ROOT)/../usr/include/** $(1)/usr/include/
+	$(CP) -aR $(STAGING_DIR)/usr/include/** $(1)/usr/include/
+	rm -rf $(1)/usr/include/{curses.h,eti.h,form.h,menu.h,ncurses.h,ncurses_dll.h,panel.h,term.h,termcap.h,unctrl.h}
+	rm -rf $(1)/usr/include/{zconf.h,zlib.h}
 endef
 
 $(eval $(call BuildPackage,system-headers))

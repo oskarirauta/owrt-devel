@@ -37,7 +37,7 @@ endef
 
 define Package/libquadmath-dev/install
 	$(INSTALL_DIR) $(1)/lib
-	$(CP) $(STAGING_DIR_ROOT)/lib/libquadmath.a $(1)/lib/
+	$(CP) $(STAGING_DIR_ROOT)/lib/libquadmath.a $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/10.2.1/
 endef
 
 $(eval $(call BuildPackage,libquadmath-dev))

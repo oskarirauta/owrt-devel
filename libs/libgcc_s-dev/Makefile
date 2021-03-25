@@ -37,8 +37,8 @@ endef
 
 define Package/libgcc_s-dev/install
 	$(INSTALL_DIR) $(1)/lib
-	$(CP) $(STAGING_DIR_ROOT)/lib/libgcc_s_pic.a $(1)/lib/
-	$(CP) $(STAGING_DIR_ROOT)/lib/libgcc_s_pic.map $(1)/lib/
+	$(CP) $(STAGING_DIR_ROOT)/lib/libgcc_s_pic.a $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/10.2.1/
+	$(CP) $(STAGING_DIR_ROOT)/lib/libgcc_s_pic.map $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/10.2.1/
 endef
 
 $(eval $(call BuildPackage,libgcc_s-dev))
