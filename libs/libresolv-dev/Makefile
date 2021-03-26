@@ -25,6 +25,8 @@ define Package/libresolv-dev/description
   contains libresolv.a
 endef
 
+GCC_VERSION=$(grep -e "PKG_VERSION:=" ../../devel/gcc/Makefile|cut -d "=" -f 2)
+
 define Build/Prepare
 	mkdir -p $(PKG_BUILD_DIR)
 endef
@@ -36,8 +38,8 @@ define Build/Install
 endef
 
 define Package/libresolv-dev/install
-	$(INSTALL_DIR) $(1)/lib
-	$(CP) $(STAGING_DIR_ROOT)/lib/libresolv.a $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/10.2.1/
+	$(INSTALL_DIR) $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/$(GCC_VERSION)
+	$(CP) $(STAGING_DIR_ROOT)/lib/libresolv.a $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/$(GCC_VERSION)/
 endef
 
 $(eval $(call BuildPackage,libresolv-dev))

@@ -27,6 +27,8 @@ define Package/libitm-dev/description
   contains libitm.a
 endef
 
+GCC_VERSION=$(grep -e "PKG_VERSION:=" ../../devel/gcc/Makefile|cut -d "=" -f 2)
+
 define Build/Prepare
 	mkdir -p $(PKG_BUILD_DIR)
 endef
@@ -38,8 +40,8 @@ define Build/Install
 endef
 
 define Package/libitm-dev/install
-	$(INSTALL_DIR) $(1)/lib
-	$(CP) $(STAGING_DIR_ROOT)/lib/libitm.a $(1)/lib/
+	$(INSTALL_DIR) $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/$(GCC_VERSION)
+	$(CP) $(STAGING_DIR_ROOT)/lib/libitm.a $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/$(GCC_VERSION)/
 endef
 
 $(eval $(call BuildPackage,libitm-dev))

@@ -25,6 +25,8 @@ define Package/libgcc_s-dev/description
   contains libgcc_s_pic.a and libgcc_s_pic.map
 endef
 
+GCC_VERSION=$(grep -e "PKG_VERSION:=" ../../devel/gcc/Makefile|cut -d "=" -f 2)
+
 define Build/Prepare
 	mkdir -p $(PKG_BUILD_DIR)
 endef
@@ -36,9 +38,9 @@ define Build/Install
 endef
 
 define Package/libgcc_s-dev/install
-	$(INSTALL_DIR) $(1)/lib
-	$(CP) $(STAGING_DIR_ROOT)/lib/libgcc_s_pic.a $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/10.2.1/
-	$(CP) $(STAGING_DIR_ROOT)/lib/libgcc_s_pic.map $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/10.2.1/
+	$(INSTALL_DIR) $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/$(GCC_VERSION)
+	$(CP) $(STAGING_DIR_ROOT)/lib/libgcc_s_pic.a $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/$(GCC_VERSION)/
+	$(CP) $(STAGING_DIR_ROOT)/lib/libgcc_s_pic.map $(1)/usr/lib/gcc/$(REAL_GNU_TARGET_NAME)/$(GCC_VERSION)/
 endef
 
 $(eval $(call BuildPackage,libgcc_s-dev))
