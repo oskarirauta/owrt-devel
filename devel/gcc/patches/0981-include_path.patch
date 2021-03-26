@@ -1,0 +1,11 @@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -374,7 +374,7 @@
+ 
+ # Flags to pass to stage2 and later makes.  They are defined
+ # here so that they can be overridden by Makefile fragments.
+-BOOT_CFLAGS= -g -O2
++BOOT_CFLAGS= -g -O2 -I$(TOOLCHAIN_DIR)/include
+ BOOT_LDFLAGS=
+ BOOT_ADAFLAGS= -gnatpg
+ 
