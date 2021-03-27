@@ -1,0 +1,34 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -2710,13 +2710,7 @@
+ esac
+ rm -f conftest*
+ 
+-# Decide which environment variable is used to find dynamic libraries.
+-case "${host}" in
+-  *-*-hpux*) RPATH_ENVVAR=SHLIB_PATH ;;
+-  *-*-darwin*) RPATH_ENVVAR=DYLD_LIBRARY_PATH ;;
+-  *-*-mingw* | *-*-cygwin ) RPATH_ENVVAR=PATH ;;
+-  *) RPATH_ENVVAR=LD_LIBRARY_PATH ;;
+-esac
++RPATH_ENVVAR=$(TOOLCHAIN_DIR)/lib:$(STAGING_DIR)/lib:$(STAGING_DIR)/usr/lib
+ 
+ # On systems where the dynamic library environment variable is PATH,
+ # gcc/ will put dynamic libraries into a subdirectory to avoid adding
+--- a/configure
++++ b/configure
+@@ -7200,13 +7200,7 @@
+ esac
+ rm -f conftest*
+ 
+-# Decide which environment variable is used to find dynamic libraries.
+-case "${host}" in
+-  *-*-hpux*) RPATH_ENVVAR=SHLIB_PATH ;;
+-  *-*-darwin*) RPATH_ENVVAR=DYLD_LIBRARY_PATH ;;
+-  *-*-mingw* | *-*-cygwin ) RPATH_ENVVAR=PATH ;;
+-  *) RPATH_ENVVAR=LD_LIBRARY_PATH ;;
+-esac
++RPATH_ENVVAR=$(TOOLCHAIN_DIR)/lib:$(STAGING_DIR)/lib:$(STAGING_DIR)/usr/lib
+ 
+ # On systems where the dynamic library environment variable is PATH,
+ # gcc/ will put dynamic libraries into a subdirectory to avoid adding
